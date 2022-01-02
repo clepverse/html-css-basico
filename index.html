@@ -11,9 +11,26 @@
       rel="stylesheet"
     />
     <style>
+      * {
+        box-sizing: border-box;
+      }
       body {
         font-family: "Maven Pro", sans-serif;
         font-size: 18px;
+        margin: 0;
+      }
+
+      /*Classes de ultilidades*/
+      .box {
+        width: 80%;
+        margin: auto;
+      }
+
+      .button {
+        padding: 15px;
+        background-color: #333;
+        color: #fff;
+        border: none;
       }
 
       .container {
@@ -21,10 +38,9 @@
         color: #eee;
         width: 80%;
         margin: auto;
-        padding: 20px;
+        padding: 60px;
         border: 3px solid #000;
         border-radius: 20px;
-        text-align: center;
       }
 
       .main-aside h2 {
@@ -53,11 +69,98 @@
       .main-aside ul a:visited {
         color: goldenrod;
       }
+
+      /*Formularios*/
+      .main-form {
+        padding-left: 20px;
+      }
+
+      .main-form .form-group {
+        padding-bottom: 10px;
+      }
+
+      .main-form .form-group input {
+        padding: 10px;
+        width: 100%;
+      }
+
+      .main-form .form-group label {
+        display: block;
+      }
+
+      /*Positions*/
+      .relative {
+        position: relative;
+        border: 3px solid #333;
+        height: 500px;
+        border-radius: 7px;
+      }
+
+      .relative .absolute {
+        position: absolute;
+        bottom: 0;
+      }
+
+      .relative .absolute h1 {
+        margin: 0;
+      }
+
+      /*Barra de navegação*/
+      #main-navbar {
+        background-color: #333;
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+        margin-bottom: 10px;
+        position: sticky;
+        top: 0;
+      }
+
+      /*Fixed Button*/
+      .fixed-button {
+        background-color: #333;
+        color: #fff;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 20px;
+      }
+
+      /*Categorias*/
+      .category ul {
+        list-style: none;
+      }
+
+      /* .category ul li:first-child {
+        color: red;
+      }
+
+      .category ul li:last-child {
+        color: green;
+      }
+
+      .category ul li:nth-child(3) {
+        color: blue;
+      } */
+
+      .category ul li:nth-child(odd) {
+        color: lightblue;
+      }
+
+      .category ul li:nth-child(even) {
+        color: blueviolet;
+      }
     </style>
     <title>Document</title>
     <!-- <link rel="stylesheet" href="./styles.css" /> -->
   </head>
   <body>
+    <nav id="main-navbar">
+      <h1>Barra de navegação</h1>
+    </nav>
     <div class="container">
       <h1>Olá mundo</h1>
       <p>
@@ -72,5 +175,50 @@
         <li><a href="https://instagram.com">Instagram</a></li>
       </ul>
     </aside>
+
+    <div class="box">
+      <form action="form.js" method="post" class="main-form">
+        <div class="form-group">
+          <label>Primeiro nome:</label>
+          <input type="text" placeholder="Primeiro nome" />
+        </div>
+
+        <div class="form-group">
+          <label>Segundo nome:</label>
+          <input type="text" placeholder="Segundo nome" />
+        </div>
+
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" placeholder="Email" />
+        </div>
+
+        <div class="form-group">
+          <label>Mensagem:</label>
+          <textarea name="mensagem"></textarea>
+        </div>
+
+        <input type="submit" class="button" />
+      </form>
+    </div>
+    <br />
+    <div class="box relative">
+      <div class="absolute">
+        <h1>Olá mundo :)</h1>
+      </div>
+    </div>
+
+    <button class="fixed-button">Fixed</button>
+
+    <div class="box category">
+      <h2>Categorias</h2>
+      <ul>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+      </ul>
+    </div>
   </body>
 </html>
